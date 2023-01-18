@@ -1,7 +1,7 @@
 FROM google/cloud-sdk:latest
 
 RUN apt-get update 
-RUN apt-get install -y wget unzip nfs-common
+RUN apt-get install -y wget unzip nfs-common vim nano
 
 # Install MySql Client
 RUN apt-get install -y default-mysql-client
@@ -17,4 +17,4 @@ RUN ACCEPT_EULA=Y apt -y install mssql-tools unixodbc-dev
 RUN echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc
 RUN echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.profile
 
-WORKDIR /
+WORKDIR /home
