@@ -26,7 +26,11 @@ function cleanup_files () {
 # import data to big query
 bq_safe_mk $LOCATION $DATASET
 
-for filename in /workspace//dbf_output/*.csv; do
+# init directories
+mkdir -p /workspace/dbf_input
+mkdir -p /workspace/dbf_output
+
+for filename in /workspace/dbf_output/*.csv; do
     [ -e "$filename" ] || continue
     # ... rest of the loop body 
     echo "Loading files $filename into Big Query"

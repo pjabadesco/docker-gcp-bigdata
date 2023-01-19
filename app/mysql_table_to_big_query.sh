@@ -14,6 +14,9 @@ json_query_file="/workspacemysql_output/$TABLE_NAME.json_query.txt"
 
 source /home/mysql_conn.sh
 
+# init directories
+mkdir -p /workspace/mysql_output
+
 # gcloud config set project $PROJECT_ID
 echo "Import $TABLE_SCHEMA.$TABLE_NAME from MySQL to BigQuery $PROJECT_ID:$DATASET.$TABLE_NAME via bucket $upload_folder"
 

@@ -12,6 +12,9 @@ upload_folder="$BUCKET_NAME/UPLOAD/"
 
 source /home/mssql_conn.sh
 
+# init directories
+mkdir -p /workspace/mssql_output
+
 # gcloud config set project $PROJECT_ID
 echo "Import $TABLE_SCHEMA.$TABLE_NAME from MSSQL to BigQuery $PROJECT_ID:$DATASET.$TABLE_NAME via bucket $upload_folder"
 

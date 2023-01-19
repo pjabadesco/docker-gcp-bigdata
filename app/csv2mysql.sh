@@ -3,9 +3,12 @@ CSV_INPUT=$1
 MYSQL_CONN=$2
 TABLE_SCHEMA=$3
 
-source mysql_conn.sh
+source /home/mysql_conn.sh
 
-for filename in /workspace/$CSV_INPUT/*.csv; do
+# init directories
+mkdir -p /workspace/csv_input/$CSV_INPUT
+
+for filename in /workspace/csv_input/$CSV_INPUT/*.csv; do
     [ -e "$filename" ] || continue
     tablename="${filename/.dbf/}"
     tablename="${tablename/.Dbf/}"
@@ -20,7 +23,7 @@ for filename in /workspace/$CSV_INPUT/*.csv; do
     mysql $mysqlargs $TABLE_SCHEMA -Bse"LOAD DATA LOCAL INFILE '$filename.final' REPLACE INTO TABLE $tablename CHARACTER SET latin1 FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '\"' ESCAPED BY '\"'"
 done
 
-for filename in /workspace/$CSV_INPUT/*.CSV; do
+for filename in /workspace/csv_input/$CSV_INPUT/*.CSV; do
     [ -e "$filename" ] || continue
     tablename="${filename/.dbf/}"
     tablename="${tablename/.Dbf/}"

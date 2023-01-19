@@ -19,5 +19,6 @@ RUN echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.profile
 
 RUN mkdir /app
 COPY app/ /app/
+RUN chmod 777 /app/*
 
 WORKDIR /home

@@ -5,8 +5,10 @@ TABLE_SCHEMA=$3
 
 source /home/mysql_conn.sh
 
+# init directories
+mkdir -p /workspace/dbf_input/$DBF_INPUT
 
-for filename in /workspace/$DBF_INPUT/*.dbf; do
+for filename in /workspace/dbf_input/$DBF_INPUT/*.dbf; do
     [ -e "$filename" ] || continue
     # ... rest of the loop body 
     tablename="${filename/.dbf/}"
@@ -21,7 +23,7 @@ for filename in /workspace/$DBF_INPUT/*.dbf; do
     fi
 done
 
-for filename in /workspace/$DBF_INPUT/*.DBF; do
+for filename in /workspace/dbf_input/$DBF_INPUT/*.DBF; do
     [ -e "$filename" ] || continue
     # ... rest of the loop body 
     tablename="${filename/.DBF/}"
@@ -36,7 +38,7 @@ for filename in /workspace/$DBF_INPUT/*.DBF; do
     fi
 done
 
-for filename in /workspace/$DBF_INPUT/*.Dbf; do
+for filename in /workspace/dbf_input/$DBF_INPUT/*.Dbf; do
     [ -e "$filename" ] || continue
     # ... rest of the loop body 
     tablename="${filename/.Dbf/}"
