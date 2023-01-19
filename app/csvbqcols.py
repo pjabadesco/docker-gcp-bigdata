@@ -28,22 +28,6 @@ def convert(bcpdata, lineterminator='*@@*', delimiter='@**@', quote='"', newdeli
 
 def main():
     args = get_args()
-
-    # with open(args.input, "rU") as f, open(args.output, "a") as o:
-    #     reader = csv.reader(f, newline='', dialect="excel")
-    #     writer = csv.writer(o, dialect='excel')
-    #     for rows in reader:
-    #         # fix the formatting of the row here
-    #         print(rows)
-    #         writer.writerow(convert(rows))
-            
-    # with open(args.input,'r') as f:
-    #     contents = f.read()
-    #     contents = convert(contents)
-    
-    # with open(args.output, 'w') as f:
-    #     f.write(contents)
-
     with open(args.input, 'r') as fi, open(args.output, 'a') as fo:
         fo.write('"')
         for line in fi:            
