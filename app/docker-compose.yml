@@ -1,0 +1,18 @@
+version: "3.4"
+services:
+  app:
+    image: pjabadesco/docker-gcp-bigdata:latest
+    tty: true           # <-- This option
+    restart: unless-stopped
+    network_mode: bridge
+    volumes:
+      - /home/bigdat:/home
+      - workspace:/workspace
+    entrypoint: /home/main.sh
+volumes:
+  workspace:
+    driver: local
+    driver_opts:
+      type: nfs
+      o: nfsvers=4,addr=192.168.20.231
+      device: ":/bigdata"

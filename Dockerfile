@@ -17,4 +17,7 @@ RUN ACCEPT_EULA=Y apt -y install mssql-tools unixodbc-dev
 RUN echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc
 RUN echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.profile
 
+RUN mkdir /app
+COPY app/ /app/
+
 WORKDIR /home
