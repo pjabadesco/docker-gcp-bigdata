@@ -17,6 +17,9 @@ RUN ACCEPT_EULA=Y apt -y install mssql-tools unixodbc-dev
 RUN echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc
 RUN echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.profile
 
+# Install AWS CLI
+RUN pip install awscli
+
 RUN mkdir /app
 COPY app/ /app/
 RUN chmod 777 /app/*
