@@ -20,6 +20,9 @@ RUN echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.profile
 # Install AWS CLI
 RUN pip install awscli
 
+# Install BCP
+RUN apt install -y mssql-tools
+
 RUN mkdir /app
 COPY app/ /app/
 RUN chmod 777 /app/*
