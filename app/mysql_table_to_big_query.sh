@@ -9,7 +9,7 @@ UIDX=`date  '+_%Y_%m_%d'`
 DATASET="${MYSQL_CONN}_${TABLE_SCHEMA}"
 upload_folder="$BUCKET_NAME/UPLOAD/$TABLE_SCHEMA/"
 mysql_output="/workspace/mysql_output/$TABLE_NAME"
-json_query_file="/workspacemysql_output/$TABLE_NAME.json_query.txt"
+json_query_file="/workspace/mysql_output/$TABLE_NAME.json_query.txt"
 #https://gist.github.com/intotecho/173401b1ce1a2c18decc3ce22ffeb5a7
 
 source /home/mysql_conn.sh
