@@ -6,10 +6,10 @@ docker-compose build
 
 docker buildx build --platform=linux/amd64 --tag=docker-gcp-bigdata:latest --load .
 
-docker tag docker-gcp-bigdata:latest pjabadesco/docker-gcp-bigdata:0.10
-docker push pjabadesco/docker-gcp-bigdata:0.10
+docker tag docker-gcp-bigdata:latest pjabadesco/docker-gcp-bigdata:0.12
+docker push pjabadesco/docker-gcp-bigdata:0.12
 
-docker tag pjabadesco/docker-gcp-bigdata:0.10 pjabadesco/docker-gcp-bigdata:latest
+docker tag pjabadesco/docker-gcp-bigdata:0.12 pjabadesco/docker-gcp-bigdata:latest
 docker push pjabadesco/docker-gcp-bigdata:latest
 
 docker tag pjabadesco/docker-gcp-bigdata:latest ghcr.io/pjabadesco/docker-gcp-bigdata:latest
