@@ -30,6 +30,9 @@ RUN percona-release enable-only tools release
 RUN apt update
 RUN apt-get install -y percona-xtrabackup-24 qpress
 
+# Install NFS
+RUN apt install nfs-common
+
 # Install BCP
 RUN mkdir /app
 COPY app/ /app/
