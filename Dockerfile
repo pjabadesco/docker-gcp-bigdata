@@ -29,6 +29,8 @@ RUN dpkg -i percona-release_latest.$(lsb_release -sc)_all.deb
 RUN percona-release enable-only tools release
 RUN apt update
 RUN apt-get install -y percona-xtrabackup-24 qpress
+RUN mv /usr/bin/xtrabackup /usr/bin/xtrabackup-2.4
+RUN apt-get install -y percona-xtrabackup-80
 
 # Install NFS
 RUN apt install nfs-common
