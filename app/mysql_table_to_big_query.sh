@@ -26,7 +26,7 @@ echo "Import $TABLE_SCHEMA.$TABLE_NAME from MySQL to BigQuery $PROJECT_ID:$DATAS
 mytime=`date '+%y%m%d%H%M'`
 # hostname=`hostname | tr 'A-Z' 'a-z'`
 file_prefix="$TABLE_NAME$mytime$TABLE_SCHEMA"
-file_prefix_path="mysql_output/$TABLE_NAME$mytime$TABLE_SCHEMA"
+file_prefix_path="/workspace/mysql_output/$TABLE_NAME$mytime$TABLE_SCHEMA"
 
 echo $file_prefix
 splitat="4000000000"
